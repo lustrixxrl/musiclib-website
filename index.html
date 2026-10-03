@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f4ecdf" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1e1814" media="(prefers-color-scheme: dark)">
 <title>MUSICLIB – Your music, all in one place</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -113,13 +115,52 @@ footer a{margin:0 10px}
 @keyframes pop{0%{opacity:0;transform:translateY(46px) rotate(-3deg)}70%{opacity:1;transform:translateY(-7px) rotate(.6deg)}100%{opacity:1;transform:none}}
 @keyframes ring{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(1.12)}}
 @keyframes recin{from{transform:translateX(260px) rotate(-200deg);opacity:0}to{transform:none;opacity:.9}}
-@media (max-width:760px){.dlrec{width:200px;right:-90px;top:6%;margin-top:0;opacity:.35}}
+
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes drop{0%{transform:translateY(-70px) rotate(-8deg);opacity:0}65%{transform:translateY(8px) rotate(1deg);opacity:1}100%{transform:none}}
 @keyframes draw{to{background-size:100% 100%}}
 @keyframes slide{to{transform:translateX(-50%)}}
-@media (max-width:760px){.hero .wrap{grid-template-columns:1fr}nav .links a:not(.keep){display:none}.vinylbox{max-width:290px}}
+
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero h1 em{background-size:100% 100%}}
+
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.view{overflow-x:clip}
+a,button,summary{-webkit-tap-highlight-color:transparent}
+/* large desktop */
+@media (min-width:1280px){.wrap{max-width:1180px}.hero{padding:90px 0 70px}.hero p{font-size:20px}.vinylbox{max-width:440px}.dlrec{width:400px;margin-top:-200px;right:-140px}}
+/* tablets (iPad portrait + landscape) */
+@media (min-width:601px) and (max-width:1024px){
+.wrap{padding:0 30px}nav .links{gap:18px}
+.hero{padding:56px 0 44px}.hero .wrap{gap:28px}.vinylbox{max-width:320px}
+.grid{grid-template-columns:repeat(2,1fr)}
+section{padding:62px 0}
+.dlrec{width:280px;margin-top:-140px;right:-110px;opacity:.55}}
+@media (min-width:601px) and (max-width:860px){
+.hero .wrap{grid-template-columns:1fr;text-align:left}.vinylbox{margin:10px auto 0;max-width:340px}}
+/* phones */
+@media (max-width:600px){
+.wrap{padding:0 18px}
+nav .wrap{height:54px}.logo{font-size:21px}nav .links{gap:16px;font-size:14px}nav .links a:nth-child(1){display:none}nav .links a{padding:10px 2px}
+.hero{padding:34px 0 30px}.hero .wrap{grid-template-columns:1fr;gap:34px}
+.hero h1{font-size:clamp(34px,10.4vw,46px)}.hero p{font-size:17px;margin:16px 0 22px}
+.cta{flex-direction:column}.cta .btn{text-align:center;width:100%}
+.vinylbox{max-width:250px;margin:0 auto 6px}
+.marq{font-size:18px;padding:11px 0}
+section{padding:50px 0}.sh{margin-bottom:26px}.sh p{font-size:15.5px}
+.card{padding:22px}.grid{gap:14px}
+.step{padding-top:50px}
+details{padding:0 16px}summary{font-size:15.5px;padding:16px 0}
+.policy h3{font-size:22px;margin-top:24px}
+.band{padding:40px 18px;border-radius:20px}.band .btn{width:100%;text-align:center}
+.dl{padding:36px 0;min-height:64vh}.dl p{margin-bottom:26px}
+.plats{gap:14px}.plat{padding:24px 18px}
+.dlrec{width:190px;right:-90px;top:2%;margin-top:0;opacity:.3}
+footer{padding:28px 0 36px}}
+@media (max-width:380px){nav .links a:nth-child(2){display:none}.hero h1{font-size:32px}.btn{padding:13px 20px}}
+/* short landscape screens (phones turned sideways) */
+@media (max-height:520px) and (orientation:landscape){.hero{padding:28px 0}.dl{min-height:auto;padding:30px 0}.dlrec{display:none}}
+/* touch screens: no hover effects */
+@media (hover:none){.vinylbox:hover .sleeve{transform:rotate(8deg)}.card:hover{border-color:var(--line)}.btn:hover{filter:none}.logo:hover i{animation:none}.plat.ok:hover{background:var(--card);color:var(--ink)}.plat.ok:hover small{color:var(--mute)}.plat.ok:active{background:var(--acc);color:#fff}.polbtn:hover{border-color:var(--line);color:inherit}}
 </style>
 </head>
 <body>
